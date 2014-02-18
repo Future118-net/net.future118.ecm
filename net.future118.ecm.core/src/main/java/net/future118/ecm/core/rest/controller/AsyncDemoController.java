@@ -1,20 +1,14 @@
 package net.future118.ecm.core.rest.controller;
 
-import net.future118.ecm.service.EcmService;
+import net.future118.ecm.service.EcmMetadataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.async.DeferredResult;
-import org.springframework.web.servlet.ModelAndView;
 
-import java.util.Queue;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * User: Artur Szaturski <artur.szaturski@future118.net>
@@ -28,7 +22,7 @@ public class AsyncDemoController {
     private static ApplicationContext applicationContext;
 
     @Autowired
-    private EcmService ecmService;
+    private EcmMetadataService ecmService;
 
 
     @RequestMapping("/normal")
@@ -51,7 +45,6 @@ public class AsyncDemoController {
     @RequestMapping("/deferred")
     public DeferredResult<String> deferredCall() {
         DeferredResult<String> result = new DeferredResult<>();
-        ecmService.getEventQueue().add(result);
         return result;
     }
 

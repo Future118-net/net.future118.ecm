@@ -13,9 +13,10 @@ import java.io.InputStream;
  */
 public interface EcmStorageDAO {
 
-    void storeFile(InputStream file);
+    void storeFile(InputStream objectContent, String objectContentId);
 
-    FileSystemResource getFile();
+    FileSystemResource getObjectConntent(String objectContentId);
 
-    void deleteFile();
+    void deleteFile(String objectContentId);
+
 }

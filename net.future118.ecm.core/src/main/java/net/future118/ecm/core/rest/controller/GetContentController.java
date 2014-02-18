@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 13:32
  */
 @RestController
-public class GetController {
+public class GetContentController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/object/content/get", method = RequestMethod.GET)
     @ResponseBody
     public String getObject() {
         return "test";

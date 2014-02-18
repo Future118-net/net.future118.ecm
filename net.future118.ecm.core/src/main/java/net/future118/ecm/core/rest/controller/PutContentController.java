@@ -1,5 +1,8 @@
 package net.future118.ecm.core.rest.controller;
 
+import net.future118.ecm.dao.EcmStorageDAO;
+import net.future118.ecm.service.EcmMetadataService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,17 +18,18 @@ import java.util.concurrent.Callable;
  * Time: 13:32
  */
 @RestController
-public class PutController {
+public class PutContentController {
 
-    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @Autowired
+    private EcmStorageDAO ecmStorageDAO;
+
+    @Autowired
+    private EcmMetadataService ecmMetadataService;
+
+    @RequestMapping(value = "/object/content/store", method = RequestMethod.PUT)
     @ResponseStatus(HttpStatus.CREATED)
-    public Callable<String> addNewObject () {
-        return new Callable<String>() {
-
-            @Override
-            public String call() throws Exception {
-                return "aaa";
-            }
-        };
+    public String storeContent () {
+        return "";
     }
+
 }

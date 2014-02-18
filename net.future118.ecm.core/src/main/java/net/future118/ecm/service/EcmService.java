@@ -1,19 +1,16 @@
 package net.future118.ecm.service;
 
-import org.springframework.web.context.request.async.DeferredResult;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Queue;
+import java.io.InputStream;
+import java.util.Map;
 
 /**
- * User: Artur Szaturski <artur.szaturski@future118.net>
+ * @author: Artur Szaturski <artur.szaturski@future118.net>
  * Project: net.future118.ecm
- * Date: 08.02.14
- * Time: 21:15
+ * Date: 18.02.14
+ * Time: 21:44
  */
+
 public interface EcmService {
 
-    Queue<DeferredResult<String>> getEventQueue();
-
-    void test() throws Exception;
+    String storeObjectWithMetadata(InputStream objectContent, Map<String, String> metadataMap);
 }

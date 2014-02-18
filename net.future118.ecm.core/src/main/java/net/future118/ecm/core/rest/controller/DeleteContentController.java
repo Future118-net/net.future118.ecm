@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * Time: 14:11
  */
 @RestController
-public class DeleteController {
+public class DeleteContentController {
 
-    @RequestMapping(value="/", method = RequestMethod.DELETE)
-    public void deleteObject() {
+    @RequestMapping(value="/object/content/delete/", method = RequestMethod.DELETE)
+    public void deleteObjectContent() {
 
     }
 
